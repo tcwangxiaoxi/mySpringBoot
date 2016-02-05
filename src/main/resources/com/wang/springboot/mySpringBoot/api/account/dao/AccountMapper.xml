@@ -10,7 +10,7 @@
 		CREATED_DATE, LAST_MODIFIED_BY,
 		LAST_MODIFIED_DATE)
 		VALUES
-		(#{id,jdbcType=VARCHAR}, 
+		(#{id,jdbcType=VARCHAR},
 		#{name,jdbcType=VARCHAR},
 		#{email,jdbcType=VARCHAR},
 		#{password,jdbcType=VARCHAR},
@@ -18,5 +18,61 @@
 		#{createdDate,jdbcType=DATE},
 		#{lastModifiedBy,jdbcType=VARCHAR},
 		#{lastModifiedDate,jdbcType=DATE})
+	</insert>
+	<insert id="insertSelective"
+		parameterType="com.wang.springboot.mySpringBoot.api.account.domain.Account">
+		insert into ACCOUNT
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				ID,
+			</if>
+			<if test="name != null">
+				NAME,
+			</if>
+			<if test="password != null">
+				PASSWORD,
+			</if>
+			<if test="email != null">
+				EMAIL,
+			</if>
+			<if test="createdBy != null">
+				CREATED_BY,
+			</if>
+			<if test="createdDate != null">
+				CREATED_DATE,
+			</if>
+			<if test="lastModifiedBy != null">
+				LAST_MODIFIED_BY,
+			</if>
+			<if test="lastModifiedDate != null">
+				LAST_MODIFIED_DATE,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="password != null">
+				#{password,jdbcType=VARCHAR},
+			</if>
+			<if test="email != null">
+				#{email,jdbcType=VARCHAR},
+			</if>
+			<if test="createdBy != null">
+				#{createdBy,jdbcType=VARCHAR},
+			</if>
+			<if test="createdDate != null">
+				#{createdDate,jdbcType=DATE},
+			</if>
+			<if test="lastModifiedBy != null">
+				#{lastModifiedBy,jdbcType=VARCHAR},
+			</if>
+			<if test="lastModifiedDate != null">
+				#{lastModifiedDate,jdbcType=DATE},
+			</if>
+		</trim>
 	</insert>
 </mapper>
