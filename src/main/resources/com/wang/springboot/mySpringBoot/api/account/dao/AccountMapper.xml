@@ -10,7 +10,8 @@
 		CREATED_DATE, LAST_MODIFIED_BY,
 		LAST_MODIFIED_DATE)
 		VALUES
-		(#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+		(#{id,jdbcType=VARCHAR}, 
+		#{name,jdbcType=VARCHAR},
 		#{email,jdbcType=VARCHAR},
 		#{password,jdbcType=VARCHAR},
 		#{createdBy,jdbcType=VARCHAR},
