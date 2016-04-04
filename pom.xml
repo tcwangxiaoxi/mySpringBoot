@@ -4,8 +4,8 @@
 
 	<groupId>com.wang.springboot</groupId>
 	<artifactId>mySpringBoot</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<version>1.01</version>
+	<packaging>war</packaging>
 
 	<name>mySpringBoot</name>
 	<url>http://maven.apache.org</url>
@@ -19,6 +19,7 @@
 		<mysql-connector-java.version>5.1.34</mysql-connector-java.version>
 		<!-- mybatis pagehelper -->
 		<pagehelper.version>3.6.3</pagehelper.version>
+		<start-class>com.levin.Application</start-class>
 	</properties>
 
 	<parent>
@@ -28,6 +29,12 @@
 	</parent>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>com.wang.agent</groupId>
+			<artifactId>staticAgent</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -44,6 +51,15 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- myBatis -->
@@ -100,6 +116,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-library</artifactId>
+			<version>2.10.4</version>
 		</dependency>
 	</dependencies>
 
