@@ -6,4 +6,10 @@ import com.wang.springboot.mySpringBoot.base.service.BaseService;
 
 public interface AccountService extends BaseService<Account, AccountCriteria> {
 
+	public void transactionTest(Account account);
+
+	public void aopTest();
+	
+	public void aopTest2();
+
 }

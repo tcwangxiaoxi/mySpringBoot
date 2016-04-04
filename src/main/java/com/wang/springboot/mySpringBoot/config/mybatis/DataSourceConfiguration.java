@@ -35,7 +35,7 @@ public class DataSourceConfiguration implements EnvironmentAware {
 
 	@Bean(destroyMethod = "shutdown")
 	public DataSource dataSource() {
-		log.debug("Configruing DataSource");
+		log.info("Configruing DataSource");
 		if (propertyResolver.getProperty("url") == null && propertyResolver.getProperty("databaseName") == null) {
 			log.error("Your database conncetion pool configuration is incorrct ! The application "
 					+ "cannot start . Please check your jdbc");

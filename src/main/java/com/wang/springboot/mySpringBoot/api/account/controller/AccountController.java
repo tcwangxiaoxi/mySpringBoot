@@ -21,7 +21,23 @@ public class AccountController {
 	@ResponseBody
 	public String sayWorld(@PathVariable("name") String name) {
 		Account account = new Account(null, name, "asd.com", "123", true);
+		accountService.transactionTest(account);
+		return "Hello15" + name;
+	}
+
+	@RequestMapping(value = "create/{name}", method = RequestMethod.GET)
+	@ResponseBody
+	public String create(@PathVariable("name") String name) {
+		Account account = new Account(null, name, "asd.com", "123", true);
 		accountService.create(account);
-		return "Hello1 " + name;
+		// aop();
+		return "create:" + name;
+	}
+
+	@RequestMapping(value = "aop", method = RequestMethod.GET)
+	@ResponseBody
+	public String aop() {
+		accountService.aopTest2();
+		return "ok";
 	}
 }

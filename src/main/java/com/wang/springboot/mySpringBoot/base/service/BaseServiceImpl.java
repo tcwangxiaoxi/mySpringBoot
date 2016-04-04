@@ -20,7 +20,6 @@ import com.wang.springboot.mySpringBoot.base.domain.AbstractCriteria;
 import com.wang.springboot.mySpringBoot.base.domain.AbstractEntity;
 import com.wang.springboot.mySpringBoot.base.utils.IdGen;
 
-@Transactional
 public abstract class BaseServiceImpl<T extends AbstractEntity, E extends AbstractCriteria>
 		implements BaseService<T, E> {
 
